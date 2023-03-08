@@ -1,16 +1,32 @@
-# This is a sample Python script.
+from selenium import webdriver
+from selenium.webdriver.common.by import By
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+class Server:
+    def __init__(self, webpage="https://mineserv.eu/login"):
+        self.driver = webdriver.Chrome()
+        self.driver.get(webpage)
+
+    def login(self, username, password):
+        username_element = self.driver.find_element(by=By.XPATH, value='//*[@id="username"]')
+        password_element = self.driver.find_element(by=By.XPATH, value='//*[@id="password"]')
+        login_button = self.driver.find_element(by=By.XPATH, value='/html/body/div[4]/div/div[2]/form/div[3]/div[2]/button')
+
+        username_element.send_keys("testing")
+        password_element.send_keys("testing")
+        login_button.click()
+
+    def choose_server(self):
+        pass
+
+    def restart_server(self):
+        pass
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
 
-
-# Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    print_hi('PyCharm')
+    server = Server()
+    server.login(username="", password="")
+    server.choose_server()
+    server.restart_server()
+    input()  # TODO remove
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
