@@ -1,1 +1,1 @@
-"# Reset Mineserv server" 
+This script is not perfect but hey, it's just for me and my friends and it's about minecraft server. In case you found it and want to learn how to use it, let me know, I will tell you what to include in the credentials.txt file
